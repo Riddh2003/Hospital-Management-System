@@ -14,11 +14,11 @@ public class Patient {
         this.scanner = scanner;
     }
     public void addPatient(){
-        System.out.println("Enter Patient Name: ");
+        System.out.println("Enter Doctor Name: ");
         String p_name = scanner.next();
-        System.out.println("Enter Patient Age: ");
+        System.out.println("Enter Doctor Age: ");
         int p_age = scanner.nextInt();
-        System.out.println("Enter Patient Gender: ");
+        System.out.println("Enter Doctor Gender: ");
         String p_gender = scanner.next();
         try{
             String query = "INSERT INTO PATIENTS(P_NAME,P_AGE,P_GENDER) VALUES(?,?,?)";
@@ -31,7 +31,7 @@ public class Patient {
                 System.out.println("Patients Data Successfully add.");
             }
             else{
-                System.out.println("Failed to add Patient!!!");
+                System.out.println("Failed to add Doctor!!!");
             }
             preparedStatement.close();
         }
@@ -44,7 +44,7 @@ public class Patient {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();
-            System.out.println("Patients: ");
+            System.out.println("PATIENTS: ");
             System.out.println("+------+----------------+----------+------------+");
             System.out.println("| P_ID | P_NAME         | P_AGE    | P_GENDER   |");
             System.out.println("+------+----------------+----------+------------+");
@@ -53,7 +53,7 @@ public class Patient {
                 String p_name = resultSet.getString("P_NAME");
                 int p_age = resultSet.getInt("P_AGE");
                 String p_gender = resultSet.getString("P_GENDER");
-                System.out.printf("|%-6s|%-16s|%-10s|%-12s");
+                System.out.printf("| %-5s| %-15s| %-9s| %-11s|\n",p_id,p_name,p_age,p_gender);
             }
             System.out.println("+------+----------------+----------+------------+");
         }
