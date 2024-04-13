@@ -14,11 +14,11 @@ public class Patient {
         this.scanner = scanner;
     }
     public void addPatient(){
-        System.out.println("Enter Doctor Name: ");
+        System.out.println("Enter Patient Name: ");
         String p_name = scanner.next();
-        System.out.println("Enter Doctor Age: ");
+        System.out.println("Enter Patient Age: ");
         int p_age = scanner.nextInt();
-        System.out.println("Enter Doctor Gender: ");
+        System.out.println("Enter Patient Gender: ");
         String p_gender = scanner.next();
         try{
             String query = "INSERT INTO PATIENTS(P_NAME,P_AGE,P_GENDER) VALUES(?,?,?)";

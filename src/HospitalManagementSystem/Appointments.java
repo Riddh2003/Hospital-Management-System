@@ -12,7 +12,7 @@ public class Appointments {
         int p_id = scanner.nextInt();
         System.out.println("Enter Doctor ID: ");
         int d_id = scanner.nextInt();
-        System.out.println("Enter Appointment Date(YYYY-MM-DD)");
+        System.out.println("Enter Appointment Date(YYYY-MM-DD): ");
         String a_date = scanner.next();
         if(patient.getPateintByID(p_id) && doctor.getDoctorByID(d_id)){
             if(checkDoctorAvailability(d_id,a_date,connection)){

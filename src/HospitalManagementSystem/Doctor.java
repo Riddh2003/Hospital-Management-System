@@ -27,7 +27,7 @@ public class Doctor {
                 int d_id = resultSet.getInt("D_ID");
                 String d_name = resultSet.getString("D_NAME");
                 String d_department = resultSet.getString("D_DEPARTMENT");
-                System.out.printf("| %-4s| %-15s| %-15s|\n",d_id,d_name,d_department);
+                System.out.printf("| %-5s| %-15s| %-15s|\n",d_id,d_name,d_department);
             }
             System.out.println("+------+----------------+----------------+");
         }
@@ -39,7 +39,7 @@ public class Doctor {
         String query = "SELECT * FROM DOCTORS WHERE D_ID = ?";
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(0,d_id);
+            preparedStatement.setInt(1,d_id);
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
                 return true;
