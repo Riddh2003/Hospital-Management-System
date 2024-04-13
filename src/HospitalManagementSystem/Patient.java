@@ -65,7 +65,7 @@ public class Patient {
         String query = "SELECT * FROM PATIENTS WHERE P_ID = ?";
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(0,p_id);
+            preparedStatement.setInt(1,p_id);
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
                 return true;
